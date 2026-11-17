@@ -1,0 +1,17 @@
+services:
+  bot:
+    build: .
+    container_name: telegram-bot
+    volumes:
+      - ./sessions:/app/sessions
+      - ./saved_media:/app/saved_media
+    env_file:
+      - .env
+    environment:
+      SESSION_DIR: /app/sessions
+      SESSION_FILE: ${SESSION_FILE:-}
+      HELP_BOT_TOKEN: ${HELP_BOT_TOKEN:-}
+    stdin_open: true
+    tty: true
+    init: true
+    restart: unless-stopped

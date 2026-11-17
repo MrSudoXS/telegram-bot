@@ -1,0 +1,3 @@
+Pyrofork==2.3.69
+TgCrypto==1.2.5
+python-dotenv==1.1.1
